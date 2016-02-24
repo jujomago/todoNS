@@ -1,0 +1,12 @@
+<Page loaded="load">
+    <StackLayout orientation="vertical">
+        <TextField text="{{nuevo_item}}" hint="Ingresa el nuevo item"/>
+        <Button text="Agregar" tap="agregarItem"/>
+
+        <ListView items="{{lista_todos}}">
+            <ListView.itemTemplate>
+                <Label text="{{nombre}}" class="listItem"/>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>
