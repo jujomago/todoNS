@@ -20,6 +20,7 @@ var lista_todos=new observableArray.ObservableArray([
 data.set('lista_todos',lista_todos);
 
 data.newItem=function(elitem){
+    console.log('desde el modelo');
     lista_todos.push(new ClaseTodo(elitem));
 };
 
