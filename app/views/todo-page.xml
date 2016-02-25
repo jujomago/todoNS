@@ -1,11 +1,22 @@
 <Page loaded="load">
+    <Page.ActionBar>
+        <ActionBar title="App Todo Example">
+            <ActionBar.actionItems>
+                <ActionItem tap="onS">
+                    <ActionItem tap="modalNuevoItem"
+                                ios.systemIcon="9" ios.position="left"
+                                android.systemIcon="ic_menu_add" android.position="actionBar"/>
+                    <ActionItem tap="modalBorrarTodo"
+                                ios.systemIcon="9" ios.position="left"
+                                android.systemIcon="ic_menu_delete" android.position="actionBar"/>
+                </ActionItem>
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Page.ActionBar>
     <StackLayout orientation="vertical">
-        <TextField text="{{nuevo_item}}" hint="Ingresa el nuevo item"/>
-        <Button text="Agregar" tap="agregarItem"/>
-
-        <ListView items="{{lista_todos}}">
+        <ListView items="{{lista_todos}}" itemTap="{{todoItemTap}}">
             <ListView.itemTemplate>
-                <Label text="{{nombre}}" class="listItem"/>
+                  <Label text="{{nombre}}" class="listItem"/>
             </ListView.itemTemplate>
         </ListView>
     </StackLayout>

@@ -5,7 +5,7 @@
 }
 
 button {
-    font-size: 42;
+    font-size: 12;
     horizontal-align: center;
 }
 
@@ -15,9 +15,17 @@ button {
     horizontal-align: center;
 }
 .listItem{
-    padding: 10px;
-    color:orange;
+    padding:15px 20px;
+    color: #353535;
+    font-size: 18;
 }
+ActionBar{
+    background-color: #4dff8f;
+}
+Page{
+    background-color: #fff;
+}
+
 /*
 ListView{
     border-color: red;

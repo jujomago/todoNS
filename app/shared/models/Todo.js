@@ -4,6 +4,9 @@
 
 function Todo(nombre){
     this.nombre=nombre;
+    this.completo=false; //default value
 }
+
+
 
 module.exports=Todo;
