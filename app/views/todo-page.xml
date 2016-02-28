@@ -1,23 +1,45 @@
 <Page loaded="load">
     <Page.ActionBar>
-        <ActionBar title="App Todo Example">
+        <ActionBar title="Cosas que hacer">
             <ActionBar.actionItems>
-                <ActionItem tap="onS">
+
                     <ActionItem tap="modalNuevoItem"
                                 ios.systemIcon="9" ios.position="left"
                                 android.systemIcon="ic_menu_add" android.position="actionBar"/>
                     <ActionItem tap="modalBorrarTodo"
                                 ios.systemIcon="9" ios.position="left"
                                 android.systemIcon="ic_menu_delete" android.position="actionBar"/>
-                </ActionItem>
+
             </ActionBar.actionItems>
         </ActionBar>
     </Page.ActionBar>
-    <StackLayout orientation="vertical">
-        <ListView items="{{lista_todos}}" itemTap="{{todoItemTap}}">
-            <ListView.itemTemplate>
-                  <Label text="{{nombre}}" class="listItem"/>
-            </ListView.itemTemplate>
-        </ListView>
-    </StackLayout>
+    <TabView tabsBackgroundColor="#a17353" selectedColor="#ef8c1e">
+        <TabView.items>
+            <TabViewItem title="A hacer">
+                <TabViewItem.view>
+                    <StackLayout orientation="vertical">
+                        <ListView id="UIListTodos" items="{{lista_todos}}" itemTap="onTapItem">
+                            <ListView.itemTemplate>
+                                <StackLayout orientation="horizontal" class="listItem">
+                                    <Image tap="onCheckItem"
+                                           src="{{completo? 'res://checkclose' : 'res://checkopen'}}"/>
+                                    <Label text="{{nombre}}"/>
+                                </StackLayout>
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Terminados">
+                <TabViewItem.view>
+                    <time-picker />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Alertas">
+                <TabViewItem.view>
+                    <time-picker />
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
 </Page>

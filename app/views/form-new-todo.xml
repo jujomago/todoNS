@@ -1,0 +1,20 @@
+<Page loaded="loaded">
+    <Page.ActionBar>
+        <ActionBar title="Nuevo Item a Agregar">
+
+        </ActionBar>
+    </Page.ActionBar>
+    <StackLayout style="padding:10px">
+        <Label text="Nueva Tarea" class="subtitle"/>
+        <TextField hint="Introduce tu tarea aqui" id="textoNewTodo"/>
+        <Label text="Configurar Hora de Recordatorio? " cssClass="subtitle"/>
+        <StackLayout  orientation="horizontal">
+            <Label text="{{valorSwitch?'Si':'No'}}"/><Switch checked="{{ valorSwitch }}" />
+        </StackLayout>
+        <TimePicker id="timeNewTodo" visibility="{{valorSwitch?'visible':'collapsed'}}"/>
+        <WrapLayout  orientation="horizontal" horizontalAlignment="center" marginTop="30">
+            <Button text="Guardar" textWrap="false" class="coolBoton save"  tap="GuardarTodo"  />
+            <Button text="Cancelar" textWrap="false" class="coolBoton cancel"  tap="atras" />
+        </WrapLayout>
+    </StackLayout>
+</Page>
